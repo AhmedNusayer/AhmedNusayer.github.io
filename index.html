@@ -1,0 +1,539 @@
+<title>Ahmed Nusayer Ashik</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap">
+<style>
+
+
+:root {
+  --bg: #ffffff;
+  --ink: #222222;
+  --ink-soft: #2c3e50;
+  --accent: #1a5276;
+  --accent-h: #2471a3;
+  --muted: #5d6d7e;
+  --light: #85929e;
+  --rule: #d5d8dc;
+  --tag-bg: #eaf2f8;
+  --tag-text: #1a5276;
+  --nav-bg: rgba(255,255,255,0.92);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #15191d;
+    --ink: #dce1e6;
+    --ink-soft: #b0bec5;
+    --accent: #5dade2;
+    --accent-h: #85c1e9;
+    --muted: #99a3ad;
+    --light: #7f8c8d;
+    --rule: #2c3440;
+    --tag-bg: #1c2a36;
+    --tag-text: #5dade2;
+    --nav-bg: rgba(21,25,29,0.92);
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #15191d;
+  --ink: #dce1e6;
+  --ink-soft: #b0bec5;
+  --accent: #5dade2;
+  --accent-h: #85c1e9;
+  --muted: #99a3ad;
+  --light: #7f8c8d;
+  --rule: #2c3440;
+  --tag-bg: #1c2a36;
+  --tag-text: #5dade2;
+  --nav-bg: rgba(21,25,29,0.92);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-size: 14.5px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+a:hover { color: var(--accent-h); }
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Header ── */
+.header {
+  padding: 40px 0 24px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.header-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.header h1 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-bottom: 6px;
+}
+
+.header .title-line {
+  font-size: 15px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.header-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 16px;
+  font-size: 13.5px;
+}
+
+.header-links a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--rule);
+}
+.header-links a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* ── Nav ── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  padding: 0 24px;
+}
+
+.nav-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.nav a {
+  display: block;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+.nav a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--accent);
+}
+
+/* ── Sections ── */
+.section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--rule);
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+
+.section h2 {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* ── About ── */
+.about p {
+  color: var(--ink-soft);
+  line-height: 1.75;
+  max-width: 640px;
+}
+
+/* ── Entries (education, experience) ── */
+.entry-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.entry {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  gap: 2px 12px;
+  align-items: start;
+}
+
+.entry-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  grid-row: 1 / 3;
+  margin-top: 1px;
+  border-radius: 3px;
+}
+
+.entry-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.entry-date {
+  font-size: 13.5px;
+  color: var(--light);
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.entry-org {
+  grid-column: 2 / -1;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.entry-details {
+  grid-column: 2 / -1;
+  margin-top: 6px;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.entry-details li {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+.entry-details li::marker {
+  color: var(--rule);
+}
+
+.entry-projects {
+  grid-column: 2 / -1;
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin-top: 4px;
+  font-style: italic;
+}
+
+.entry-tags {
+  grid-column: 2 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 8px;
+}
+
+.tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 2px 9px;
+  border-radius: 3px;
+  background: var(--tag-bg);
+  color: var(--tag-text);
+}
+
+/* ── Publications ── */
+.pub-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.pub-item {
+  padding-left: 16px;
+  border-left: 3px solid var(--accent);
+}
+
+.pub-title {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.pub-authors {
+  font-size: 13.5px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.pub-authors strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.pub-venue {
+  font-size: 13px;
+  color: var(--light);
+  margin-top: 2px;
+}
+
+.pub-venue a {
+  font-weight: 500;
+}
+
+/* ── Skills ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 12px 16px;
+  align-items: baseline;
+}
+
+.skill-cat {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.skill-vals {
+  font-size: 14px;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ── Accolades ── */
+.accolade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accolade-item {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  display: flex;
+  gap: 8px;
+}
+
+.accolade-item .bullet {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 20px 0 32px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--light);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .header h1 { font-size: 24px; }
+  .header-top { flex-direction: column; gap: 16px; }
+  .entry { grid-template-columns: 24px 1fr; }
+  .entry-logo { width: 24px; height: 24px; }
+  .entry-date { grid-column: 2 / -1; text-align: left; }
+  .skills-grid { grid-template-columns: 1fr; gap: 4px 0; }
+  .skill-cat { margin-top: 8px; }
+  .nav { padding: 0 16px; }
+  .page { padding: 0 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+
+<div class="page">
+  <header class="header">
+    <div class="header-top">
+      <div class="header-text">
+        <h1>Ahmed Nusayer Ashik</h1>
+        <div class="title-line">M.Sc. Student in Computer Science, University of Manitoba</div>
+        <div class="header-links">
+          <a href="mailto:nusayerashik@gmail.com">Email</a>
+          <a href="https://scholar.google.com/citations?user=FAOuVm0AAAAJ&hl=en">Google Scholar</a>
+          <a href="https://github.com/AhmedNusayer">GitHub</a>
+          <a href="https://linkedin.com/in/ahmednusayer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#experience">Experience</a>
+    <a href="#publications">Publications</a>
+    <a href="#skills">Skills</a>
+    <a href="#accolades">Others</a>
+  </div>
+</nav>
+
+<div class="page">
+
+  <section class="section about" id="about">
+    <h2>About</h2>
+    <p>
+      I am a graduate researcher at the <strong>MAMBA Lab, University of Manitoba</strong>, supervised by Dr. Shaowei Wang. My research investigates the impact of context-memory conflicts on Large Language Models in code generation. Before research, I spent over two and a half years as a software engineer at Brain Station 23, where I built backend systems for clients across Norway.
+    </p>
+  </section>
+
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <img class="entry-logo" src="images/umanitoba.png" alt="University of Manitoba">
+        <div class="entry-title">M.Sc. in Computer Science</div>
+        <div class="entry-date">2025 &ndash; 2026</div>
+        <div class="entry-org">University of Manitoba &middot; Winnipeg, Canada</div>
+      </div>
+      <div class="entry">
+        <img class="entry-logo" src="images/iut.png" alt="Islamic University of Technology">
+        <div class="entry-title">B.Sc. in Software Engineering</div>
+        <div class="entry-date">2018 &ndash; 2022</div>
+        <div class="entry-org">Islamic University of Technology &middot; Gazipur, Bangladesh</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <div class="entry-list">
+      <div class="entry">
+        <img class="entry-logo" src="images/umanitoba.png" alt="University of Manitoba">
+        <div class="entry-title">Graduate Research Assistant</div>
+        <div class="entry-date">Jan 2025 &ndash; Present</div>
+        <div class="entry-org">Software Management, Maintenance, and Reliability Lab, University of Manitoba &middot; Winnipeg, Canada</div>
+      </div>
+      <div class="entry">
+        <img class="entry-logo" src="images/bs23.png" alt="Brain Station 23">
+        <div class="entry-title">Software Engineer</div>
+        <div class="entry-date">Jul 2023 &ndash; Nov 2024</div>
+        <div class="entry-org">Brain Station 23 &middot; Dhaka, Bangladesh</div>
+        <div class="entry-projects">
+          <a href="https://tryggbat.securmark.no/" target="_blank" rel="noopener noreferrer">Trygg B&aring;t</a> (IoT boat-safety platform)
+          &middot;
+          <a href="https://live.peppes.no/" target="_blank" rel="noopener noreferrer">Peppes Pizza</a>
+        </div>
+        <div class="entry-tags">
+          <span class="tag">.NET</span>
+          <span class="tag">GraphQL</span>
+          <span class="tag">AWS AppSync</span>
+          <span class="tag">AWS Cognito</span>
+          <span class="tag">MSSQL</span>
+        </div>
+      </div>
+      <div class="entry">
+        <img class="entry-logo" src="images/bs23.png" alt="Brain Station 23">
+        <div class="entry-title">Associate Software Engineer</div>
+        <div class="entry-date">May 2022 &ndash; Jun 2023</div>
+        <div class="entry-org">Brain Station 23 &middot; Dhaka, Bangladesh</div>
+        <div class="entry-projects">
+          <a href="https://rs.no/" target="_blank" rel="noopener noreferrer">RS Project</a></div>
+        <div class="entry-tags">
+          <span class="tag">.NET</span>
+          <span class="tag">MSSQL</span>
+        </div>
+      </div>
+      <div class="entry">
+        <img class="entry-logo" src="images/bs23.png" alt="Brain Station 23">
+        <div class="entry-title">Trainee Software Engineer</div>
+        <div class="entry-date">Feb &ndash; May 2021</div>
+        <div class="entry-org">Brain Station 23 &middot; Dhaka, Bangladesh</div>
+        <div class="entry-tags">
+          <span class="tag">.NET</span>
+          <span class="tag">Vue.js</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="publications">
+    <h2>Publications</h2>
+    <div class="pub-list">
+      <div class="pub-item">
+        <div class="pub-title">When LLMs Lag Behind: Knowledge Conflicts from Evolving APIs in Code Generation</div>
+        <div class="pub-authors"><strong>Ashik, A.N.</strong>, Wang, S., Chen, T.H., Asaduzzaman, M. and Tian, Y., 2026.</div>
+        <div class="pub-venue">Under review for <em>Empirical Software Engineering</em>. <a href="https://arxiv.org/abs/2604.09515">arXiv:2604.09515</a></div>
+      </div>
+      <div class="pub-item">
+        <div class="pub-title">Recognizing Bangladeshi Traffic Signs in the Wild</div>
+        <div class="pub-authors"><strong>Ashik, A.N.</strong>, Shanto, M.S.H., Khan, R.H., Kabir, M.H. and Ahmed, S., 2022.</div>
+        <div class="pub-venue">25th International Conference on Computer and Information Technology (ICCIT), pp. 1004&ndash;1009. IEEE. <a href="https://doi.org/10.1109/ICCIT57492.2022.10055612">DOI</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-cat">Languages</div>
+      <div class="skill-vals">Python, C#, Java, SQL</div>
+      <div class="skill-cat">ML / LLM</div>
+      <div class="skill-vals">PyTorch, Hugging Face Transformers, vLLM</div>
+      <div class="skill-cat">Backend</div>
+      <div class="skill-vals">ASP.NET, FastAPI, GraphQL, Microservices, Serverless</div>
+      <div class="skill-cat">Cloud &amp; DevOps</div>
+      <div class="skill-vals">Azure Pipelines, AWS (AppSync, Cognito), Docker, Git</div>
+    </div>
+  </section>
+
+  <section class="section" id="accolades">
+    <h2>Others</h2>
+    <div class="accolade-list">
+      <div class="accolade-item">
+        <span class="bullet">&bull;</span>
+        <span><strong>IGSES Scholarship</strong> &mdash; International Graduate Student Entrance Scholarship, University of Manitoba</span>
+      </div>
+      <div class="accolade-item">
+        <span class="bullet">&bull;</span>
+        <span><strong>IUT Research Seed Grant</strong> &mdash; Funded B.Sc. thesis research at Islamic University of Technology</span>
+      </div>
+      <div class="accolade-item">
+        <span class="bullet">&bull;</span>
+        <span><strong>1st Place, AI Hackathon</strong> &mdash; Won among 32 teams at Brain Station 23, building an LLM-powered self-assessment platform</span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    Ahmed Nusayer Ashik &middot; nusayerashik@gmail.com
+  </footer>
+
+</div>
